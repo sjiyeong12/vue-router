@@ -12,15 +12,15 @@
       <legend>JOIN</legend>
       <div>
         <label for="id" class="title" >ID</label>
-        <input type="text" ref="id" id="id">
+        <input type="text" ref="id" id="id" name="id">
       </div>
       <div>
         <label for="name" class="title">Name</label>
-        <input type="text" ref="name" id="name">
+        <input type="text" ref="name" id="name" name="name">
       </div>
       <div>
         <label for="pass" class="title">Password</label>
-        <input type="password" ref="pass" id="pass">
+        <input type="password" ref="pass" id="pass" name="pass">
       </div>
       <div>
         <label for="repass" class="title">Re Password</label>

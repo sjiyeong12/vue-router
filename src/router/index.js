@@ -1,8 +1,8 @@
-import { createRouter, createWebHashHistory } from "vue-router"
+import { createRouter, createWebHistory } from "vue-router"
 import Home from "@/components/Home.vue"
 import Join from "@/components/Join.vue"
 import Login from "@/components/Login.vue"
-import About from "@/components/About.vue"
+import List from "@/components/List.vue"
 import NotFound from "@/components/NotFound.vue"
 
 const routes = [
@@ -11,13 +11,12 @@ const routes = [
   {path: "/portfolio", redirect: '/'}, //redirect 다시 돌림
   {path: "/join", name: "Join", component: Join},
   {path: "/login", name: "Login", component:Login},
-  // {path: "/login2", name: "Login2", component:Login2},
-  {path: "/about", name: "About", component: About},
-  {path: "/:catchAll(.*)+", name: "About", component: NotFound},
+  {path: "/list", name: "List", component: List},
+  {path: "/:catchAll(.*)+", component: NotFound},
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(), routes, 
+  history: createWebHistory(), routes, 
 })
 
 export default router
