@@ -1,4 +1,5 @@
 <template>
+<header></header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand"  >JIYOUNG</a>
@@ -29,6 +30,7 @@
   </div>
 </nav>
 <router-view/>
+<footer></footer>
 </template>
 <script>
 export default {

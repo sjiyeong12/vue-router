@@ -19,7 +19,7 @@
         </div>
         <input type="submit" class="fadeIn fourth zero-raduis btn-margin" value="login" ref="btnLogin" @click.prevent="login">
         <h2>You don't have a account ?</h2>
-        <input type="button" class="fadeIn fourth zero-raduis pc" value="register" @click.prevent="Join">
+        <input type="button" class="fadeIn fourth zero-raduis pc" value="register" @click="join()">
       </form>
       
 
@@ -33,23 +33,50 @@ export default {
   name : 'ToLogin',
   setup(){
     const title = ref('Login')
-    
-    return {title}
-  },
-   methods: {
-    login(){
-      const frm = this.$refs.frm
-      const id = this.$refs.id
-      const pass = this.$refs.pass
-      if(id.value == ''){ alert('아이디를 입력하세요'); id.focus(); return;}
-      if(pass.value == ''){ alert('비밀번호를 입력하세요'); pass.focus(); return;}
-      frm.submit();
-    },
-    cancel(){
-      this.$refs.frm.reset()
+    const frm = ref(null)
+    const id = ref(null)
+    const pass = ref(null)
+
+    function login(){
+    if(id.value.value == ''){ alert('아이디를 입력하세요'); id.value.focus(); return;}
+    if(pass.value.value == ''){ alert('비밀번호를 입력하세요'); pass.value.focus(); return;}
+    frm.value.submit();
+  }
+    function cancel(){
+      frm.value.reset()
     }
+    return {title,login,cancel,frm,id,pass}
+},
+methods:{
+  join(){
+    this.$router.push('/Join')
   }
 }
+}
+
+
+// import{ref} from '@vue/reactivity';
+// export default {
+//   name : 'ToLogin',
+//   setup(){
+//     const title = ref('Login')
+    
+//     return {title}
+//   },
+//    methods: {
+//     login(){
+//       const frm = this.$refs.frm
+//       const id = this.$refs.id
+//       const pass = this.$refs.pass
+//       if(id.value == ''){ alert('아이디를 입력하세요'); id.focus(); return;}
+//       if(pass.value == ''){ alert('비밀번호를 입력하세요'); pass.focus(); return;}
+//       frm.submit();
+//     },
+//     cancel(){
+//       this.$refs.frm.reset()
+//     }
+//   }
+// }
 </script>
 
 <style>
